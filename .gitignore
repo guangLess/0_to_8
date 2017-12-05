@@ -1,3 +1,4 @@
 node_modules
 src/db/localhost_files/bundle.js
 bundle.js.map
+.vscods

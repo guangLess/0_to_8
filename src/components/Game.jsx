@@ -18,9 +18,11 @@ class Game extends React.Component {
       <div className="game">
         <div>
         <div className="content">
-          <h1>🙈🙈Hello</h1> 
-        </div>  
-        
+          <h1>🙈🙈Hello</h1>
+          <p> put them back to the order '0🥚', '1🌲', '2🍃','3🍂',
+                      '4🍀', '️5🌴', '6🍪',
+                      '7x(empty)','8🌿'</p>
+        </div>
         <Board parts={parts}/>
         </div>
           <div className="game-info">

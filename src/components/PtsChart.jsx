@@ -8,9 +8,9 @@ export default class PtsChart extends React.Component {
     componentDidMount(){
         this.creatChart()
     }
-
+    //#fe3
     creatChart(){        
-        this.space = new CanvasSpace( this.ptsCanvas ).setup({bgcolor: "#fe3", resize: true, retina: true})
+        this.space = new CanvasSpace( this.ptsCanvas ).setup({bgcolor: "rgb(244, 224, 184)", resize: true, retina: true})
         this.form = this.space.getForm()
         console.log("updated---->", this.props.enablePointer)
           // with pointer 
