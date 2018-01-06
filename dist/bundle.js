@@ -34571,6 +34571,11 @@ var Game = function (_React$Component) {
               'h1',
               null,
               '\uD83D\uDE48\uD83D\uDE48Hello'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              ' put them back to the order \'0\uD83E\uDD5A\', \'1\uD83C\uDF32\', \'2\uD83C\uDF43\',\'3\uD83C\uDF42\', \'4\uD83C\uDF40\', \'\uFE0F5\uD83C\uDF34\', \'6\uD83C\uDF6A\', \'7x(empty)\',\'8\uD83C\uDF3F\''
             )
           ),
           _react2.default.createElement(_Board2.default, { parts: parts })
@@ -35007,12 +35012,14 @@ var PtsChart = function (_React$Component) {
         value: function componentDidMount() {
             this.creatChart();
         }
+        //#fe3
+
     }, {
         key: 'creatChart',
         value: function creatChart() {
             var _this2 = this;
 
-            this.space = new _pts.CanvasSpace(this.ptsCanvas).setup({ bgcolor: "#fe3", resize: true, retina: true });
+            this.space = new _pts.CanvasSpace(this.ptsCanvas).setup({ bgcolor: "rgb(244, 224, 184)", resize: true, retina: true });
             this.form = this.space.getForm();
             console.log("updated---->", this.props.enablePointer);
             // with pointer 

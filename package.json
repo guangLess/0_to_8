@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "jest",
     "build": "webpack",
     "start": "webpack-dev-server --content-base dist --history-api-fallback true"
   },
@@ -14,6 +14,8 @@
     "axios": "^0.17.0",
     "express": "^4.16.2",
     "gemoji": "^4.2.0",
+    "jest": "^22.0.4",
+    "react-test-renderer": "^16.0.0-alpha.12",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "redux": "^3.7.2",
@@ -21,11 +23,23 @@
     "redux-logger": "^3.0.6",
     "sequelize": "^4.20.3",
     "webpack": "^3.8.1",
+    "webpack-babel-jest": "^1.0.4",
     "webpack-dev-middleware": "^1.12.0",
     "webpack-dev-server": "^2.9.4",
     "webpack-hot-middleware": "^2.20.0",
     "webpack-middleware": "^1.5.1"
-  },
+    },
+  "jest": {
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/reactTests/__mocks__/fileMock.js",
+      "\\.(css|less)$": "<rootDir>/client/src/stylesheets/"
+    },
+    "testPathIgnorePatterns": [
+      "<rootDir>/node_modules/",
+      "<rootDir>/legacy_notes_and_workbook/",
+      "<rootDir>/client/src/stylesheets/"
+      ]
+    },
   "dependencies": {
     "babel-core": "^6.26.0",
     "babel-loader": "^7.1.2",
@@ -33,6 +47,7 @@
     "babel-preset-react": "^6.24.1",
     "babel-preset-stage-2": "^6.24.1",
     "fs": "0.0.1-security",
+    "mocha": "^4.1.0",
     "pts": "^0.2.2",
     "q": "^1.5.1",
     "react": "^16.0.0",

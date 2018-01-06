@@ -1,7 +1,5 @@
 
 
-
-
 //export each var and require {var}
 //anything that is not export default use { } 
 
