@@ -8,7 +8,7 @@ configure({ adapter: new Adapter() });
 
 describe('<Game />', () => {
     it('should render <Board /> components', () => {
-        //const wrapper = shallow(<Game />);
+        const wrapper = shallow(<Game />);
         //expect(wrapper.find(Board)).to.equal(true);
     })
 })

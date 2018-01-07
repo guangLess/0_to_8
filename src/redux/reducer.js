@@ -16,10 +16,10 @@ const memoryStack = [ '🥚', '🌲', '🍃','🍂',
 const testMemory = ['x','0','x','0','x','0','x','0'];
 
 //action 
-const CREATE_BOARD = 'CREATE_BOARD'
+export const CREATE_BOARD = 'CREATE_BOARD'
 
-//action creator
-const createBoard = (memories) => ({
+//Action creator
+export const createBoard = (memories) => ({
     type: CREATE_BOARD,
     memories
 })
@@ -34,7 +34,7 @@ const memoryReducer = (state = memoryStack, action) => {
     }
 }
 
-//Action creators
+//
 export const getMemoryBoard = () => dispatch => {
     //fomat board first 
     let formated = formatArrayToObj(memoryStack)
