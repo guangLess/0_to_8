@@ -34,7 +34,8 @@ describe('helper functions', () => {
             expect(firstN).toEqual(sArray[position_2]);
             expect(secondN).toEqual(sArray[position_1]);
         })
-    })
+    });
+
     describe('formateArray function', () => {
         let index = 1;
         let one = copy[index];
@@ -44,7 +45,6 @@ describe('helper functions', () => {
         
         it('should format an Array of dictionaries consists of many paires which keys are baseIndex of the original index of board number, and part as current according value', () => {
             let expectedPair = {baseIndex: index, part: one};
-            //expect(expectedPair).toBeType('object');
             expect(formattedArray).toEqual(expect.arrayContaining([expectedPair]))
         });
 

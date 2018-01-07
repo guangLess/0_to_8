@@ -12,7 +12,6 @@ export const shuffle = (a) => {
   }
 }
 
-//Helper methods
 export const swapArrayElements = (arr, indexA, indexB) => {
   var temp = arr[indexA];
   arr[indexA] = arr[indexB];
