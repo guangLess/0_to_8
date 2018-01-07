@@ -1,8 +1,6 @@
 
-
 //export each var and require {var}
 //anything that is not export default use { } 
-
 
 export const shuffle = (a) => {
   var j, x, i;
@@ -14,7 +12,6 @@ export const shuffle = (a) => {
   }
 }
 
-
 //Helper methods
 export const swapArrayElements = (arr, indexA, indexB) => {
   var temp = arr[indexA];
@@ -23,11 +20,11 @@ export const swapArrayElements = (arr, indexA, indexB) => {
 }
 
 export const formatArrayToObj = (array) => {
-return array.reduce((collect, curr, index) => {
-    let obj = { baseIndex: index,
-                 part: curr
-                  }
-     collect.push(obj) //[index, curr]
-     return collect
-}, [])
+  return array.reduce((collect, curr, index) => {
+      let obj = { baseIndex: index,
+                  part: curr
+                }
+      collect.push(obj) //[index, curr]
+      return collect
+    }, [])
 }
