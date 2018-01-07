@@ -13,10 +13,7 @@ const config = {
             {
                 test: /\.jsx?$/,
                 loader: 'babel-loader',
-                exclude: /node_modules/,
-                use: [
-                    'babel-loader',
-                ],
+                exclude: /node_modules/
             },
             {
                 test: [/\.wexbim$/, /\.docx$/, /\.csv$/, /\.mp4$/, /\.xlsx$/, /\.doc$/, /\.avi$/, /\.webm$/, /\.mov$/, /\.mp3$/, /\.pdf$/],
@@ -52,11 +49,11 @@ const config = {
           path.join(__dirname, 'node_modules'),
         ],
       },
-      plugins: [
-        new webpack.DefinePlugin({
-          'process.env.NODE_ENV': JSON.stringify('production'),
-        }),
-      ], 
+    //   plugins: [
+    //     new webpack.DefinePlugin({
+    //       'process.env.NODE_ENV': JSON.stringify('production'),
+    //     }),
+    //   ], 
 }
 
 module.exports = config

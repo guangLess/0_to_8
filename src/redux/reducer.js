@@ -6,7 +6,7 @@ import { composeWithDevTools } from 'redux-devtools-extension'
 import {shuffle, swapArrayElements,formatArrayToObj } from '../helper'
 
 
-const memoryStack = [ '🥚', '🌲', '🍃','🍂',
+export const memoryStack = [ '🥚', '🌲', '🍃','🍂',
                       '🍀', '️🌴', '🍪',
                       'x','🌿' ]  // 🌿 🌾🎋🍂🍁🌵 🌍🐾 ❄️🌼'🌱', 
 
