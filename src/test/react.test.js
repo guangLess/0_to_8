@@ -9,12 +9,6 @@ const mockStore = configureMockStore(middlewares);
 
 describe('Redux ', () => {
     //const memories = ['h', 'x', 1, '💪🏼', '🤖']
-    //let mStore = mockStore(memoryStack);
-    // describe('async actions', () => {
-    //     beforeEach( () => {
-    //         mockStore = mockStore(memoryStack);
-    //     })
-    // })
     describe('Action', () => {
         it('createBoard action should create a 1_D array for the board', () => {
             const expectedBoard = {
@@ -36,26 +30,14 @@ describe('Redux ', () => {
     })
 
     describe('store', () => {
-        it('should initialize state with defalut stack as what it is', () => {
-            /* FIXME: store needs to be mocked? 
-            const actual  = store.getState()
-            const expected = memoryStack
-            expect(actual).toEqual(expected)
-            */
+        it('should returns correct testmemories after called getState()', () => {
+            const testMemories = ['h', 'x', 1, '💪🏼', '🤖'];
+            const mockedStore = mockStore({memories: testMemories})
+            mockedStore.dispatch(createBoard(testMemories))
+            
+            const expected = {memories: testMemories}
+            expect(mockedStore.getState()).toEqual(expected)
         })
-/*
-        it('should execute getMemoryBoard', () => {
-            const testStore = mockStore({ memories: [] })
-            //console.log("testStore", testStore.dispatch(getMemoryBoard));
-            //return
-             let x = testStore.dispatch(getMemoryBoard)
-             console.log(">>>>", x, testStore.getActions(), testStore.getState() );
-             
-             //getActions().toEqual(createBoard)
-        
-        })
-        //console.log(store)
-  */
     })
 })
 
