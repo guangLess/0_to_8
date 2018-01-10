@@ -25,7 +25,7 @@ export const createBoard = (memories) => ({
 })
 
 //reducer default test = ['x','0','x','0','x','0','x','0']
-const memoryReducer = (state = memoryStack, action) => {
+export const memoryReducer = (state = memoryStack, action) => {
     switch (action.type){
         case CREATE_BOARD:
             return action.memories

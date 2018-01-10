@@ -1,11 +1,13 @@
 
-import store, { CREATE_BOARD, createBoard, getMemoryBoard, memoryStack} from '../redux/reducer'
-import configureStore from 'redux-mock-store'
-//import fetchMock from 'fetch-mock'
-const mockStore = configureStore({memoryStack});
-//console.log(store)
+//FIXME: use wild card here, the list is getting very long
+import store, { CREATE_BOARD, createBoard, getMemoryBoard, memoryStack, memoryReducer} from '../redux/reducer'
+import configureMockStore from 'redux-mock-store'
+import thunk from 'redux-thunk'
 
-describe('Redux Actions', () => {
+const middlewares = [thunk]
+const mockStore = configureMockStore(middlewares);
+
+describe('Redux ', () => {
     //const memories = ['h', 'x', 1, '💪🏼', '🤖']
     //let mStore = mockStore(memoryStack);
     // describe('async actions', () => {
@@ -13,29 +15,53 @@ describe('Redux Actions', () => {
     //         mockStore = mockStore(memoryStack);
     //     })
     // })
-
-    it('this action should create board as 1_D array', () => {
-        const expectedBoard = {
-            type: CREATE_BOARD,
-            memories: memoryStack
-        };
-        expect(createBoard(memoryStack)).toEqual(expectedBoard)
-    });
-// test connect
-/*
-    it('Should dispatch .....', () => {
-        mStore.dispatch(getMemoryBoard)
-        let newBoard = mockStore.getState();
-        console.log("newBoard", newBoard)
+    describe('Action', () => {
+        it('createBoard action should create a 1_D array for the board', () => {
+            const expectedBoard = {
+                type: CREATE_BOARD,
+                memories: memoryStack
+            };
+            expect(createBoard(memoryStack)).toEqual(expectedBoard)
+        });
     })
-*/
-})
 
-describe('store', () => {
-    it('should initialize state with defalut stack as what it is', () => {
-        const actual  = store.getState()
-        const expected = memoryStack
-        //console.log(actual, "----", expected)
-        expect(actual).toEqual(expected)
+    describe('Reducer', () => {
+        it('Reducer should return initial state(memoryStack) if args are empty action and undefined state', () => {
+            expect(memoryReducer(undefined, {})).toEqual(memoryStack);
+        })
+        it('Reducer should accept action: createBoard, and returns a 1_D array', () => {
+            let testStack = [1, 2, 3]
+            expect(memoryReducer(test, createBoard(testStack))).toEqual(testStack);
+        })
     })
+
+    describe('store', () => {
+        it('should initialize state with defalut stack as what it is', () => {
+            /* FIXME: store needs to be mocked? 
+            const actual  = store.getState()
+            const expected = memoryStack
+            expect(actual).toEqual(expected)
+            */
+        })
+
+        it('should execute getMemoryBoard', () => {
+            const testStore = mockStore({ memories: [] })
+            //console.log("testStore", testStore.dispatch(getMemoryBoard));
+            //return
+             let x = testStore.dispatch(getMemoryBoard)
+             console.log(">>>>", x, typeof x);
+             
+             //getActions().toEqual(createBoard)
+        
+        })
+        //console.log(store)
+    })
+
+// // test connect
+//     it('Should dispatch .....', () => {
+//         // const memories = ['h', 'x', 1, '💪🏼', '🤖']
+//         const testStore = mockStore({memoryStack});
+//         //
+//     })
+
 })
