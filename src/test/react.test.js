@@ -43,25 +43,54 @@ describe('Redux ', () => {
             expect(actual).toEqual(expected)
             */
         })
-
+/*
         it('should execute getMemoryBoard', () => {
             const testStore = mockStore({ memories: [] })
             //console.log("testStore", testStore.dispatch(getMemoryBoard));
             //return
              let x = testStore.dispatch(getMemoryBoard)
-             console.log(">>>>", x, typeof x);
+             console.log(">>>>", x, testStore.getActions(), testStore.getState() );
              
              //getActions().toEqual(createBoard)
         
         })
         //console.log(store)
+  */
+    })
+})
+
+describe('connect', () => {
+    const create = () => {
+        const testStore = {
+            getState: jest.fn(() => ({})),
+            dispatch: jest.fn(),
+        };
+        const next = jest.fn()
+        const invoke = (action) => thunk(testStore)(next)(action)
+        return {testStore, next, invoke}
+    };
+
+    it('passes through non-function action', () => {
+        const { next, invoke } = create()
+        const action = { type: 'TEST'}
+        invoke(action)
+        expect(next).toHaveBeenCalledWith(action)
+    })
+    it('calls the function', () => {
+        const { invoke } = create()
+        const fn = jest.fn()
+        invoke(fn)
+        expect(fn).toHaveBeenCalled()
     })
 
-// // test connect
-//     it('Should dispatch .....', () => {
-//         // const memories = ['h', 'x', 1, '💪🏼', '🤖']
-//         const testStore = mockStore({memoryStack});
-//         //
-//     })
-
+    it('passes dispatch and getState', () => {
+        const testAction = {type: 'TestAction'}
+        const { testStore, invoke } = create()
+        invoke((dispatch, getState) => {
+          dispatch(testAction)
+          getState();
+        })
+        expect(testStore.dispatch).toHaveBeenCalledWith(testAction)
+        expect(testStore.getState).toHaveBeenCalled()
+      });
 })
