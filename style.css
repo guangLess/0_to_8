@@ -1,6 +1,11 @@
 body {
     font: 24px "Fira Code", Futura, sans-serif;
     margin: 0;
+    background: #f3dfba;
+  }
+  h1 span {
+    font-size: 20px;
+    font-weight: 100;
   }
   
   ol, ul {
@@ -9,11 +14,13 @@ body {
   .index {
     font-size: 16px;
     font-weight: 100;
+    padding-bottom: 50px;
   }
   .boardIndex {
     font-size: 30px;
     font-weight: bold;
-    color: rgb(89, 195, 77)
+    color: rgb(144, 144, 139);
+    margin-top: 22px;
   }
   
   .game-board div{
@@ -26,7 +33,7 @@ body {
   
   .square {
     background: transparent;
-    border: 1px solid rgb(227, 223, 223);
+    border: 1px solid rgb(255, 253, 253);
     color: green;
     font-family: "Fira Code";
     float: left;
@@ -59,10 +66,11 @@ body {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    width: 40%;
+    width: 33%;
     background-color: transparent;
-    margin: 100px auto 0;
-    height: calc(40vw);
+    margin: 10px auto 0;
+    left:-135px;
+    height: calc(33vw);
     z-index: 2;
     position:relative;
     transition: opacity 1s ease-in;
@@ -83,10 +91,11 @@ body {
     height: 100%;
     width: 100%;
     z-index: 1;
+    overflow: hidden;
   }
   .canvas {
     height: 100%;
-    width: 160%;
+    width: 100%;
   }
 
   .control {
@@ -94,16 +103,16 @@ body {
     position: absolute;
     transform: translateY(-50%);
     top: 50%;
-    left: 20px;
+    right: 35px;
   }
 
   .control .bordIndex {
-    font-size: 20px;
+    font-size: 23px;
   }
   
   .control .enAbleSetch {
-    font-size: 20px;
+    font-size: 30px;
     background: rgb(210, 232, 246);
-    border: 2px solid blue;
+    /* border: 2px solid blue; */
     padding: 3px 20px;
   }
