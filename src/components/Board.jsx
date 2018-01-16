@@ -76,9 +76,11 @@ class Board extends React.Component {
       </div>
       <div className="control">
         <span className="bordIndex"> Board Index : {this.state.move} </span>
+        <div>
         <button onClick={this.handleClick} className="enAbleSetch">
           {enablePointer ? 'ON' : 'OFF'}
         </button>
+        </div>
       </div>
       </div>
     )

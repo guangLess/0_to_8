@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import { shallow, configure } from 'enzyme';
 import Adapter from 'enzyme-adapter-react-15';
 import Square from '../components/Square.jsx';

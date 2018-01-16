@@ -1,6 +1,6 @@
 
 //FIXME: use wild card here, the list is getting very long
-import store, { CREATE_BOARD, createBoard, getMemoryBoard, memoryStack, memoryReducer} from '../redux/reducer'
+import store, { CREATE_BOARD, createBoard, memoryStack, memoryReducer} from '../redux/reducer'
 import configureMockStore from 'redux-mock-store'
 import thunk from 'redux-thunk'
 
@@ -8,7 +8,6 @@ const middlewares = [thunk]
 const mockStore = configureMockStore(middlewares);
 
 describe('Redux ', () => {
-    //const memories = ['h', 'x', 1, '💪🏼', '🤖']
     describe('Action', () => {
         it('createBoard action should create a 1_D array for the board', () => {
             const expectedBoard = {
