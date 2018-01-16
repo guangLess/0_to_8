@@ -34,8 +34,8 @@ class Game extends React.Component {
   }
 }
 
-const memoryStack = [ '🌳',' ', '☘',
-'🌲', '🌱', '🍀', 
+const memoryStack = [ '🌳', ' ', '☘',
+'🌲', '🌱', '🍀',  
 '🌵', '🌿', '️🍃' ]
 
 const mapStateToProps = state => {
