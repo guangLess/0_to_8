@@ -23,6 +23,7 @@
     "redux": "^3.7.2",
     "redux-devtools-extension": "^2.13.2",
     "redux-logger": "^3.0.6",
+    "redux-mock-store": "^1.4.0",
     "sequelize": "^4.20.3",
     "webpack": "^3.8.1",
     "webpack-babel-jest": "^1.0.4",
