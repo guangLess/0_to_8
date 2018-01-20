@@ -36,19 +36,20 @@ describe('components', () => {
     it('renders connected <Game /> component', () => {
         expect(container.length).toEqual(1);
     })
-
-    it('renders <Square /> component calls "handle Click" on button click', () => {
+    //FIXME: need to write better this. Disabled button is not right. 😥
+    it('renders <Square /> component // need to write more here', () => {
         const content =  {baseIndex:1, part: "1"};
         const group = [1, 2, 3]
         const updatBoard = sinon.spy();
         const squarerapper = mount(<Square part={content} group={group} updatBoard={updatBoard} disable={false} />);
         //const clickHandler = sinon.spy(squarerapper.instance(), 'clickHandler');
-        const button = squarerapper.find('button')
+        const button = squarerapper.find('button') //.at(0).getProps().disableed()
+        console.log(">>",button);
         // const spy = jest.spyOn(squarerapper.instance(), 'clickHandler');
         //button disalbe does not work
 
         squarerapper.update();
-        squarerapper.find('button')
+        //squarerapper.find('button:enabled')
         button.simulate('click');
         expect(button.text()).toContain(1);
         expect(updatBoard.calledOnce).toBe(true)
@@ -62,11 +63,3 @@ describe('components', () => {
     //     })
      })
 })
-
-/*
-describe('<Square />', () => {
-    it('should render <Board /> components', () => {
-        const wrapper = shallow(<Square />);
-        //expect(wrapper.find(Square)).to.have.length(9)
-    })
-*/
