@@ -24,7 +24,7 @@ describe('components', () => {
     describe('Game', () => {
     const middlewares = [thunk]
     const mockStore = configureMockStore(middlewares);
-    const initialState = {mempries: [1,2,3]}
+    const initialState = {memories: [1,2,3]}
     let store, container
 
     beforeEach( () => {
@@ -35,14 +35,15 @@ describe('components', () => {
 
     it('renders connected <Game /> component', () => {
         expect(container.length).toEqual(1);
+        console.log(">---->", container)
     })
-    /*it('should render itself with props', () => {
-            const {gameWrapper, props} = setup()
-            expect(props.mountMemories.mock.calls.length).toBe(1)
-            console.log(gameWrapper)
-        })
-    })*/
-    })
+    
+    // it('should render itself with props', () => {
+    //         const {gameWrapper, props} = setup()
+    //         //expect(props.mountMemories.mock.calls.length).toBe(1)
+    //         console.log(gameWrapper, props)
+    //     })
+     })
 })
 
 /*
