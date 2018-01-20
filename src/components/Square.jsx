@@ -11,7 +11,7 @@ export default class Square extends React.Component {
       let tempGroup = this.props.group.slice()
       let index = this.props.boardIndex
       
-      this.props.onWine(this.props.part, index)//pass the data back to upstream      
+      //this.props.onWine(this.props.part, index)//pass the data back to upstream      
 
       //update board (action swap)
       this.props.updatBoard(tempGroup, this.props.emptyIndex, this.props.nextIndex) //update to store    

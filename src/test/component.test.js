@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import Enzyme, { shallow, configure, mount} from 'enzyme';
 import Adapter from 'enzyme-adapter-react-16';
+import sinon from 'sinon';
 import thunk from 'redux-thunk'
 import Square from '../components/Square.jsx';
 import Game from '../components/Game.jsx';
@@ -30,12 +31,28 @@ describe('components', () => {
     beforeEach( () => {
         store = mockStore(initialState)
         container = shallow(<Game store= {store} />)
-
     })
 
     it('renders connected <Game /> component', () => {
         expect(container.length).toEqual(1);
-        console.log(">---->", container)
+    })
+
+    it('renders <Square /> component calls "handle Click" on button click', () => {
+        const content =  {baseIndex:1, part: "1"};
+        const group = [1, 2, 3]
+        const updatBoard = sinon.spy();
+        const squarerapper = mount(<Square part={content} group={group} updatBoard={updatBoard} disable={false} />);
+        //const clickHandler = sinon.spy(squarerapper.instance(), 'clickHandler');
+        const button = squarerapper.find('button')
+        // const spy = jest.spyOn(squarerapper.instance(), 'clickHandler');
+        //button disalbe does not work
+
+        squarerapper.update();
+        squarerapper.find('button')
+        button.simulate('click');
+        expect(button.text()).toContain(1);
+        expect(updatBoard.calledOnce).toBe(true)
+
     })
     
     // it('should render itself with props', () => {
